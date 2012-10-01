@@ -26,7 +26,7 @@
   <td>
     <j:set var="actions" value="${it.getActions(job)}"/>
     <j:forEach var="action" items="${actions}">
-      <a href="${jobBaseUrl}${job.shortUrl}${action.urlName}">
+      <a href="${jobBaseUrl}${job.shortUrl}lastSuccessfulBuild/${action.urlName}">
           <img src="${action.getImageOf(subIconSize)}"
                title="${action.description}" alt="${action.description}"
                border="0"/>
