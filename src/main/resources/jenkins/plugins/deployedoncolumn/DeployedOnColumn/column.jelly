@@ -26,7 +26,7 @@
   <td>
     <j:set var="actions" value="${it.getActions(job)}"/>
     <j:forEach var="action" items="${actions}">
-      <a href="http://${action.applicationVersion}.${action.applicationId}.appspot.com">
+      <a href="${jobBaseUrl}${job.shortUrl}${action.urlName}">
           <img src="${action.getImageOf(subIconSize)}"
                title="${action.description}" alt="${action.description}"
                border="0"/>
