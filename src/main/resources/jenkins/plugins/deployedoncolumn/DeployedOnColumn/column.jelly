@@ -26,11 +26,22 @@
   <td>
     <j:set var="actions" value="${it.getActions(job)}"/>
     <j:forEach var="action" items="${actions}">
-      <a href="${jobBaseUrl}${job.shortUrl}lastSuccessfulBuild/${action.urlName}">
-          <img src="${action.getImageOf(subIconSize)}"
-               title="${action.description}" alt="${action.description}"
-               border="0"/>
-      </a>
+      <j:choose>
+        <j:when test="${it.isAbsolute(action.urlName)}">
+          <a href="action.urlName" target="_new">
+              <img src="${action.getImageOf(subIconSize)}"
+                   title="${action.description}" alt="${action.description}"
+                   border="0"/>
+          </a>
+        </j:when>
+        <j:otherwise>
+          <a href="${jobBaseUrl}${job.shortUrl}lastSuccessfulBuild/${action.urlName}">
+              <img src="${action.getImageOf(subIconSize)}"
+                   title="${action.description}" alt="${action.description}"
+                   border="0"/>
+          </a>
+        </j:otherwise>
+      </j:choose>
     </j:forEach>
     <j:if test="${actions.size()==0}">
       ${%noneAvailable}

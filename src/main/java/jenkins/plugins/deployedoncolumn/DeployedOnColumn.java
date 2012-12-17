@@ -38,6 +38,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * @author stephenc
@@ -51,6 +52,11 @@ public class DeployedOnColumn extends ListViewColumn {
     @SuppressWarnings("unused") // stapler
     public List<DeployedOnAction> getActions(Item item) {
         return DescriptorImpl.getActions(item);
+    }
+
+    public boolean isAbsolute(String url) {
+        Pattern urlScheme = Pattern.compile("^[a-z0-9\\+\\.\\-]+:.*$");
+        return urlScheme.matcher(url).matches();
     }
 
     @Extension(ordinal = -1000)
