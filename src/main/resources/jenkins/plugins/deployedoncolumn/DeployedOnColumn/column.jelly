@@ -28,7 +28,7 @@
     <j:forEach var="action" items="${actions}">
       <j:choose>
         <j:when test="${it.isAbsolute(action.urlName)}">
-          <a href="action.urlName" target="_new">
+          <a href="${action.urlName}" target="_new">
               <img src="${action.getImageOf(subIconSize)}"
                    title="${action.description}" alt="${action.description}"
                    border="0"/>
