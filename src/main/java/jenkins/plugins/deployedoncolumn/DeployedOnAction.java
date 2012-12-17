@@ -25,6 +25,8 @@ package jenkins.plugins.deployedoncolumn;
 
 import hudson.model.Action;
 
+import java.io.Serializable;
+
 /**
  * {@link Action} that contributes an icon to the "Deployed on" column.
  *
@@ -39,7 +41,7 @@ import hudson.model.Action;
  * @author stephenc
  * @since 1.0
  */
-public interface DeployedOnAction extends Action {
+public interface DeployedOnAction extends Action, Serializable {
     /**
      * Returns the URL to the image.
      *
