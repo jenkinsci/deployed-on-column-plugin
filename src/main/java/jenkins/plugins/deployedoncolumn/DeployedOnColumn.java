@@ -83,6 +83,7 @@ public class DeployedOnColumn extends ListViewColumn {
                 for (MavenModule m : maven.getModules()) {
                     result.addAll(getActions(m));
                 }
+                result.addAll(getActions(lastSuccessful));
                 return result;
             } else if (item instanceof MatrixProject) {
                 List<DeployedOnAction> result = new ArrayList<DeployedOnAction>();
