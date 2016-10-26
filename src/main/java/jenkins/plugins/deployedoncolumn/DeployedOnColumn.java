@@ -63,6 +63,11 @@ public class DeployedOnColumn extends ListViewColumn {
     public static class DescriptorImpl extends ListViewColumnDescriptor {
 
         @Override
+        public boolean shownByDefault() {
+            return false;
+        }
+
+        @Override
         public String getDisplayName() {
             return Messages.DeployedOnColumn_DisplayName();
         }
