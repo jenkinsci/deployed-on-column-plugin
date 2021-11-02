@@ -42,7 +42,7 @@
     This plugin provides a column to hold build actions reflecting deployment of build artifacts to remote servers
     as well as an extension point to allow other plugins to contribute such actions.
   </description>
-  <url>https://github.com/jenkinsci/deployed-on-column-plugin</url>
+  <url>https://plugins.jenkins.io/deployed-on-column/</url>
   <licenses>
     <license>
       <name>The MIT license</name>
